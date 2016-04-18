@@ -1,15 +1,15 @@
-package com.example.tomecabello.myapplication.services;
+package com.example.tomecabello.myapplication.imgur.services;
 
 import android.content.Context;
 
 import java.lang.ref.WeakReference;
 
 import com.example.tomecabello.myapplication.Constants;
-import com.example.tomecabello.myapplication.helpers.NotificationHelper;
-import com.example.tomecabello.myapplication.imgurmodel.ImageResponse;
-import com.example.tomecabello.myapplication.imgurmodel.ImgurAPI;
-import com.example.tomecabello.myapplication.imgurmodel.Upload;
-import com.example.tomecabello.myapplication.utils.NetworkUtils;
+import com.example.tomecabello.myapplication.imgur.helpers.NotificationHelper;
+import com.example.tomecabello.myapplication.imgur.imgurmodel.ImageResponse;
+import com.example.tomecabello.myapplication.imgur.imgurmodel.ImgurAPI;
+import com.example.tomecabello.myapplication.imgur.imgurmodel.Upload;
+import com.example.tomecabello.myapplication.imgur.utils.NetworkUtils;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;

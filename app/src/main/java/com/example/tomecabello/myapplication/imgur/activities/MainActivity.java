@@ -1,4 +1,4 @@
-package com.example.tomecabello.myapplication.activities;
+package com.example.tomecabello.myapplication.imgur.activities;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.tomecabello.myapplication.CosasFragment;
-import com.example.tomecabello.myapplication.helpers.NotificationHelper;
+import com.example.tomecabello.myapplication.imgur.helpers.NotificationHelper;
+import com.example.tomecabello.myapplication.imgur.helpers.IntentHelper;
+import com.example.tomecabello.myapplication.imgur.imgurmodel.ImageResponse;
+import com.example.tomecabello.myapplication.imgur.services.UploadService;
 import com.example.tomecabello.myapplication.notitas;
 import com.firebase.client.Firebase;
 import com.squareup.picasso.Picasso;
@@ -19,11 +22,9 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 
 import com.example.tomecabello.myapplication.R;
-import com.example.tomecabello.myapplication.helpers.DocumentHelper;
-import com.example.tomecabello.myapplication.helpers.IntentHelper;
-import com.example.tomecabello.myapplication.imgurmodel.ImageResponse;
-import com.example.tomecabello.myapplication.imgurmodel.Upload;
-import com.example.tomecabello.myapplication.services.UploadService;
+import com.example.tomecabello.myapplication.imgur.helpers.DocumentHelper;
+import com.example.tomecabello.myapplication.imgur.imgurmodel.Upload;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

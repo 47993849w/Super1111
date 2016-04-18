@@ -4,9 +4,9 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="notification_progress">hellooo</string>
-    <string name="notifaction_success">hooliiiopo</string>
-    <string name="notification_share_link">shwerr</string>
-    <string name="notification_fail">diosere</string>
+    <string name="notification_progress">Un momento</string>
+    <string name="notifaction_success">Datos OK</string>
+    <string name="notification_share_link"></string>
+    <string name="notification_fail">Ups</string>
     <string name="title_activity_main_detalles">MainDetalles</string>
 </resources>

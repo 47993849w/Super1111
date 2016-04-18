@@ -1,4 +1,4 @@
-package com.example.tomecabello.myapplication.utils;
+package com.example.tomecabello.myapplication.imgur.utils;
 
 import android.util.Log;
 

@@ -1,4 +1,4 @@
-package com.example.tomecabello.myapplication.helpers;
+package com.example.tomecabello.myapplication.imgur.helpers;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,8 +10,8 @@ import android.support.v4.app.NotificationCompat;
 import java.lang.ref.WeakReference;
 
 import com.example.tomecabello.myapplication.R;
-import com.example.tomecabello.myapplication.activities.MainActivity;
-import com.example.tomecabello.myapplication.imgurmodel.ImageResponse;
+import com.example.tomecabello.myapplication.imgur.activities.MainActivity;
+import com.example.tomecabello.myapplication.imgur.imgurmodel.ImageResponse;
 
 /**
  * Created by AKiniyalocts on 1/15/15.

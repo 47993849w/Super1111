@@ -1,4 +1,4 @@
-package com.example.tomecabello.myapplication.helpers;
+package com.example.tomecabello.myapplication.imgur.helpers;
 
 import android.app.Activity;
 import android.content.Intent;

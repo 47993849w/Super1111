@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="BCN diferent monuments"
+            android:label="BCN Alternative monuments"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +29,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
-            android:label=""
+            android:name=".imgur.activities.MainActivity"
+            android:label="Crea tu monumeto"
+            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data

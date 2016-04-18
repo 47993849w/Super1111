@@ -1,4 +1,4 @@
-package com.example.tomecabello.myapplication.imgurmodel;
+package com.example.tomecabello.myapplication.imgur.imgurmodel;
 
 /**
  * Created by AKiniyalocts on 1/14/15.

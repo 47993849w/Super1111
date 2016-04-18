@@ -1,6 +1,5 @@
 package com.example.tomecabello.myapplication;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -51,15 +50,18 @@ public class MapitaFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RadiusMarkerClusterer cosas1Markers;
 
     private MyLocationNewOverlay myLocationOverlay;
     private MinimapOverlay mMinimapOverlay;
     private ScaleBarOverlay mScaleBarOverlay;
     private CompassOverlay mCompassOverlay;
     private static IMapController mapController;
-  //  private Radius parkingMarkers;
     private OnFragmentInteractionListener mListener;
+    private MapView map;
 
+    public static double lo=2;
+    public static double la=1;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -92,11 +94,6 @@ public class MapitaFragment extends Fragment {
     }
 
 
-    private MapView map;
-
-    public static double lo=2;
-    public static double la=1;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -118,7 +115,6 @@ public class MapitaFragment extends Fragment {
 
         return view;
     }
-    private RadiusMarkerClusterer parkingMarkers;
 
     public static void ir(){
         mapController.animateTo(new GeoPoint(la, lo));
@@ -131,33 +127,34 @@ public class MapitaFragment extends Fragment {
         //MyApp app = (MyApp) getActivity().getApplication();
         Firebase ref = new Firebase("https://adri.firebaseio.com/");
 
-        final Firebase parkings = ref;
+        final Firebase re = ref;
 
-        parkings.addValueEventListener(new ValueEventListener() {
+        re.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                    notitas parking = postSnapshot.getValue(notitas.class);
-                    Log.e("XXXX", parking.toString());
+                    notitas nota = postSnapshot.getValue(notitas.class);
+                    Log.e("XXXX", nota.toString());
 
                     Marker marker = new Marker(map);
 
-                    if (parking.getLat()!=null && parking.getLo()!=null){
-                    GeoPoint point = new GeoPoint(
-                            Double.parseDouble(parking.getLat()),
-                            Double.parseDouble(parking.getLo())
-                    );
+                    if (nota.getLat() != null && nota.getLo() != null) {
+                        GeoPoint point = new GeoPoint(
+                                Double.parseDouble(nota.getLat()),
+                                Double.parseDouble(nota.getLo())
+                        );
 
-                    marker.setPosition(point);
+                        marker.setPosition(point);
 
-                    marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
 //                    marker.setIcon(getResources().getDrawable(R.drawable.ic_cloud_upload));
-                    marker.setTitle(parking.getTitulo());
-                    marker.setAlpha(0.6f);
+                        marker.setTitle(nota.getTitulo());
+                        marker.setAlpha(0.6f);
 
-                    parkingMarkers.add(marker);}
+                        cosas1Markers.add(marker);
+                    }
                 }
-                parkingMarkers.invalidate();
+                cosas1Markers.invalidate();
                 map.invalidate();
             }
 
@@ -169,14 +166,14 @@ public class MapitaFragment extends Fragment {
     }
 
     private void setupMarkerOverlay() {
-        parkingMarkers = new RadiusMarkerClusterer(getContext());
-        map.getOverlays().add(parkingMarkers);
+        cosas1Markers = new RadiusMarkerClusterer(getContext());
+        map.getOverlays().add(cosas1Markers);
 
         Drawable clusterIconD = getResources().getDrawable(R.drawable.marker_default);
         Bitmap clusterIcon = ((BitmapDrawable)clusterIconD).getBitmap();
 
-        parkingMarkers.setIcon(clusterIcon);
-        parkingMarkers.setRadius(100);
+        cosas1Markers.setIcon(clusterIcon);
+        cosas1Markers.setRadius(100);
     }
 
 
@@ -194,8 +191,7 @@ public class MapitaFragment extends Fragment {
         mapController.setZoom(14);
     }
 
-  //  static double lat;
-  //  static double lon;
+
     private void setOverlays() {
         final DisplayMetrics dm = getResources().getDisplayMetrics();
 

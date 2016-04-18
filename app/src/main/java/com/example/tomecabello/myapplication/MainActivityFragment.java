@@ -30,7 +30,7 @@ public class MainActivityFragment extends Fragment {
         myFirebaseRef.setValue("Do you have da56ta? You'll love Firebase.");
 
 
-        System.out.println("coloooooeeeeddddddddddddddddddddddddddddddddddd");
+        //System.out.println("coloooooeeeeddddddddddddddddddddddddddddddddddd");
        Intent i = new Intent();
         i.setAction(android.content.Intent.ACTION_VIEW);
 

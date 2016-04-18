@@ -1,4 +1,4 @@
-package com.example.tomecabello.myapplication.imgurmodel;
+package com.example.tomecabello.myapplication.imgur.imgurmodel;
 
 import retrofit.Callback;
 import retrofit.http.Body;
